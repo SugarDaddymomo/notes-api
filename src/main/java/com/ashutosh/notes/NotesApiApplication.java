@@ -31,6 +31,5 @@ public class NotesApiApplication implements CommandLineRunner {
 		} catch (Exception e) {
 			System.out.println("User already added");
 		}
-
 	}
 }

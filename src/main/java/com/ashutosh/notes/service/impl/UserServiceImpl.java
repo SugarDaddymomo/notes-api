@@ -4,7 +4,7 @@ import com.ashutosh.notes.model.Role;
 import com.ashutosh.notes.model.User;
 import com.ashutosh.notes.repository.UserRepository;
 import com.ashutosh.notes.requests.AuthenticationRequest;
-import com.ashutosh.notes.requests.AuthenticationResponse;
+import com.ashutosh.notes.responses.AuthenticationResponse;
 import com.ashutosh.notes.requests.RegisterRequest;
 import com.ashutosh.notes.security.JwtService;
 import com.ashutosh.notes.service.UserService;
