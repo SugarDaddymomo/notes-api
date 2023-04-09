@@ -7,6 +7,5 @@ import com.ashutosh.notes.requests.RegisterRequest;
 
 public interface UserService {
     AuthenticationResponse register(RegisterRequest request);
-
     AuthenticationResponse authenticate(AuthenticationRequest request);
 }

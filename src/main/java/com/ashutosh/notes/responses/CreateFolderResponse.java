@@ -10,7 +10,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class CreateFolderResponse {
-
-    private String folderName;
-    private boolean isPrivate;
+    private String message;
 }

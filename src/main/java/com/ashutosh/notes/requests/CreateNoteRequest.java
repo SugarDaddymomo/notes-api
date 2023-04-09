@@ -11,7 +11,6 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class CreateNoteRequest {
-
     private List<String> notes;
     private String folderName;
 }

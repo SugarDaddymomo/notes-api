@@ -1,5 +1,6 @@
 package com.ashutosh.notes.controller;
 
+import com.ashutosh.notes.dto.FolderDTO;
 import com.ashutosh.notes.requests.CreateFolderRequest;
 import com.ashutosh.notes.responses.CreateFolderResponse;
 import com.ashutosh.notes.responses.GetFolderResponse;
@@ -17,14 +18,17 @@ public class FolderController {
     private final FolderService folderService;
 
     @PostMapping("/create")
-    public ResponseEntity<CreateFolderResponse> createFolder(
-            @RequestBody @Valid CreateFolderRequest request
-            ) {
+    public ResponseEntity<CreateFolderResponse> createFolder(@RequestBody @Valid CreateFolderRequest request) {
         return ResponseEntity.ok(folderService.createFolder(request));
     }
 
     @GetMapping("/folders")
     public ResponseEntity<GetFolderResponse> getFolders() {
         return ResponseEntity.ok(folderService.getFolders());
+    }
+
+    @GetMapping("/folders/{folder-name}")
+    public ResponseEntity<FolderDTO> getFolder(@PathVariable("folder-name") String folderName) {
+        return ResponseEntity.ok(folderService.getFolderByName(folderName));
     }
 }
