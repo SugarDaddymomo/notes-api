@@ -1,0 +1,319 @@
+{
+	"info": {
+		"_postman_id": "d759d718-9561-4fff-b78e-550349a84aa1",
+		"name": "Notes API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18079157"
+	},
+	"item": [
+		{
+			"name": "Test Secured endpoint",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3MDExNzI4NTE0IiwiaWF0IjoxNjgwNDM2NjI0LCJleHAiOjE2ODA0MzgwNjR9.PcMGl38cGNY2rL3GrR6-N50V7EbGaA6mXqMMHR-RSTk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/v1/notes-api/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"notes-api",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"number\": \"9988776655\",\r\n    \"password\": \"P@ssword98\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/auth/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register a user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"number\": \"7011728514\",\r\n    \"password\": \"P@ssword98\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Folder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5OTg4Nzc2NjU1IiwiaWF0IjoxNjgxMDQ0MTYzLCJleHAiOjE2ODEwNDU2MDN9.zvXyP529ITEzBYK_3nCEAOoW7VvXP7l63PswlmCwiBg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"test\",\r\n    \"private\": false,\r\n    \"parent\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/notes-api/folder/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"notes-api",
+						"folder",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Folders with content",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5OTg4Nzc2NjU1IiwiaWF0IjoxNjgxMDQ0MTYzLCJleHAiOjE2ODEwNDU2MDN9.zvXyP529ITEzBYK_3nCEAOoW7VvXP7l63PswlmCwiBg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/notes-api/folder/folders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"notes-api",
+						"folder",
+						"folders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Notes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5OTg4Nzc2NjU1IiwiaWF0IjoxNjgxMDQ0MTYzLCJleHAiOjE2ODEwNDU2MDN9.zvXyP529ITEzBYK_3nCEAOoW7VvXP7l63PswlmCwiBg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"notes\": [\r\n        \"this is my note section\",\r\n        \"o can save as many as i want\",\r\n        \"adding note to test\"\r\n    ],\r\n    \"folderName\": \"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/notes-api/note/create-note",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"notes-api",
+						"note",
+						"create-note"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Image to Folder",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5OTg4Nzc2NjU1IiwiaWF0IjoxNjgxMDQ0MTYzLCJleHAiOjE2ODEwNDU2MDN9.zvXyP529ITEzBYK_3nCEAOoW7VvXP7l63PswlmCwiBg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Ashu Yadav/Downloads/pexels-jonathan-borba-2950331.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/v1/notes-api/note/add-image?folder-name=test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"notes-api",
+						"note",
+						"add-image"
+					],
+					"query": [
+						{
+							"key": "folder-name",
+							"value": "test"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Folder's Content",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5OTg4Nzc2NjU1IiwiaWF0IjoxNjgxMDQ0MTYzLCJleHAiOjE2ODEwNDU2MDN9.zvXyP529ITEzBYK_3nCEAOoW7VvXP7l63PswlmCwiBg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/v1/notes-api/folder/folders/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"notes-api",
+						"folder",
+						"folders",
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
